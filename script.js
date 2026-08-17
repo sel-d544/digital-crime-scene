@@ -384,5 +384,12 @@ function renderBoard() {
 
 
 function updateProgress() {
+    const counter =
+        document.getElementById("clueCounter") ||
+        document.getElementById("cluesFound") ||
+        document.getElementById("progressCount");
 
-  const counter = document.getElementById("cl
+    if (!counter) return;
+
+    counter.textContent = found.size + " / 6";
+}
