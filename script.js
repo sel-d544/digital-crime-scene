@@ -384,12 +384,43 @@ function renderBoard() {
 
 
 function updateProgress() {
-    const counter =
-        document.getElementById("clueCounter") ||
-        document.getElementById("cluesFound") ||
-        document.getElementById("progressCount");
+  const counter = document.getElementById("clueCount");
 
-    if (!counter) return;
+  if (!counter) return;
 
-    counter.textContent = found.size + " / 6";
+  counter.textContent = found.size;
 }
+
+
+function submitCase() {
+  const q1 = document.getElementById("q1").value;
+  const q2 = document.getElementById("q2").value;
+  const q3 = document.getElementById("q3").value;
+  const q4 = document.getElementById("q4").value;
+  const q5 = document.getElementById("q5").value;
+
+  const result = document.getElementById("result");
+
+  if (!result) return;
+
+  const correct =
+    q1 === "hour" &&
+    q2 === "access" &&
+    q3 === "2247" &&
+    q4 === "echo" &&
+    q5 === "maya";
+
+  if (correct) {
+    result.innerHTML = `
+      <h3>✓ CASE SOLVED</h3>
+      <p>Excellent investigation. You connected the evidence correctly.</p>
+    `;
+
+    showScreen("ending");
+  } else {
+    result.innerHTML = `
+      <h3>✗ NOT QUITE</h3>
+      <p>Some answers are incorrect. Review the evidence and try again.</p>
+    `;
+  }
+        }
