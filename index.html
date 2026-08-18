@@ -3,150 +3,932 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#070a0f">
   <title>The Digital Crime Scene — Case #001</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <div class="ambient-grid"></div>
+  <div class="scanlines"></div>
+
+  <!-- BOOT SCREEN -->
+  <div id="boot" class="boot">
+    <div class="boot-inner">
+      <div class="boot-mark">◉</div>
+
+      <p>SECURE FORENSIC TERMINAL</p>
+
+      <h2>INITIALIZING CASE FILE...</h2>
+
+      <div class="boot-bar">
+        <span></span>
+      </div>
+
+      <small id="bootText">
+        Loading evidence index...
+      </small>
+    </div>
+  </div>
+
+  <!-- NOTIFICATION -->
+  <div id="toast" class="toast"></div>
+
   <div id="app">
+
+    <!-- TOP BAR -->
     <header class="topbar">
-      <div class="brand"><span class="dot"></span> THE DIGITAL CRIME SCENE</div>
-      <div class="case-status">CASE #001 <span>● UNRESOLVED</span></div>
+
+      <div class="brand">
+        <span class="dot"></span>
+        THE DIGITAL CRIME SCENE
+      </div>
+
+      <div class="case-status">
+        CASE #001
+        <span>
+          ● <b id="statusText">UNRESOLVED</b>
+        </span>
+      </div>
+
     </header>
 
+
     <main>
+
+      <!-- ================= HOME ================= -->
+
       <section id="home" class="screen active">
+
         <div class="hero">
-          <p class="eyebrow">FICTIONAL DIGITAL FORENSICS INVESTIGATION</p>
-          <h1>THE LAST LOGIN</h1>
-          <p class="intro">
-            At 11:47 PM, Nina Thomas stopped responding. Her final message said:
-            <strong>"If I disappear from the chat, check the old account."</strong>
-          </p>
-          <div class="case-card">
-            <div><span>VICTIM</span><b>Nina Thomas</b></div>
-            <div><span>DATE</span><b>17 OCT 2026</b></div>
-            <div><span>STATUS</span><b>UNRESOLVED</b></div>
+
+          <!-- MAIN FORENSIC VISUAL -->
+          <div class="hero-visual">
+
+            <div class="hud hud-a">
+              EVIDENCE // 001
+            </div>
+
+            <div class="hud hud-b">
+              RECOVERED 23:14
+            </div>
+
+            <div
+              class="evidence-photo laptop-photo"
+              aria-label="Fictional forensic reconstruction of Nina's laptop"
+            >
+
+              <div class="photo-vignette"></div>
+
+              <div class="laptop">
+
+                <div class="laptop-screen">
+
+                  <div class="screen-top">
+                    PROJECT_ECHO / LOGIN_HISTORY
+                  </div>
+
+                  <div class="screen-lines">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i class="alert"></i>
+                    <i></i>
+                  </div>
+
+                  <strong>23:47</strong>
+
+                </div>
+
+                <div class="laptop-base"></div>
+
+              </div>
+
+              <div class="desk-note">
+                DON'T TRUST THE CLOCK.
+              </div>
+
+            </div>
+
+            <div class="crosshair">
+              +
+            </div>
+
           </div>
-          <button class="primary" onclick="showScreen('briefing')">START CASE →</button>
+
+
+          <p class="eyebrow">
+            FICTIONAL DIGITAL FORENSICS INVESTIGATION
+          </p>
+
+
+          <h1>
+            THE LAST <span>LOGIN</span>
+          </h1>
+
+
+          <p class="intro">
+
+            At 11:47 PM, Nina Thomas stopped responding.
+
+            Her final message said:
+
+            <strong>
+              "If I disappear from the chat, check the old account."
+            </strong>
+
+          </p>
+
+
+          <!-- CASE INFORMATION -->
+
+          <div class="case-card">
+
+            <div>
+              <span>VICTIM</span>
+              <b>Nina Thomas</b>
+            </div>
+
+            <div>
+              <span>DATE</span>
+              <b>17 OCT 2026</b>
+            </div>
+
+            <div>
+              <span>STATUS</span>
+              <b>UNRESOLVED</b>
+            </div>
+
+          </div>
+
+
+          <button
+            class="primary pulse-btn"
+            onclick="showScreen('briefing')"
+          >
+            START CASE
+            <span>→</span>
+          </button>
+
+
+          <p class="microcopy">
+            HEADPHONES OPTIONAL • USE YOUR EYES • TRUST THE EVIDENCE
+          </p>
+
         </div>
+
       </section>
+
+
+
+      <!-- ================= BRIEFING ================= -->
 
       <section id="briefing" class="screen">
-        <div class="narrow">
-          <p class="eyebrow">CASE BRIEFING</p>
-          <h2>Something doesn't add up.</h2>
-          <p>Nina's laptop was switched off at <strong>22:14</strong>. Yet her old account shows a login at <strong>23:47</strong>.</p>
-          <p>Your job is to determine <strong>who accessed the account, what Nina discovered, and why the timestamps are wrong.</strong></p>
-          <div class="warning">⚠ Everything in this case is fictional.</div>
-          <button class="primary" onclick="showScreen('dashboard')">ENTER INVESTIGATION →</button>
+
+        <div class="brief-layout">
+
+          <div class="brief-copy">
+
+            <p class="eyebrow">
+              CASE BRIEFING // CLASSIFIED
+            </p>
+
+            <h2>
+              Something doesn't add up.
+            </h2>
+
+            <p>
+              Nina's laptop was switched off at
+              <strong>22:14</strong>.
+              Yet her old account shows a login at
+              <strong>23:47</strong>.
+            </p>
+
+            <p>
+              Your job is to determine
+              <strong>
+                who accessed the account, what Nina discovered,
+                and why the timestamps are wrong.
+              </strong>
+            </p>
+
+            <div class="warning">
+              ⚠ Everything in this case is fictional.
+              The investigation is designed for demonstration.
+            </div>
+
+            <button
+              class="primary"
+              onclick="showScreen('dashboard')"
+            >
+              ENTER INVESTIGATION
+              <span>→</span>
+            </button>
+
+          </div>
+
+
+          <!-- PHOTO -->
+
+          <div class="brief-board">
+
+            <div class="board-label">
+              INITIAL EVIDENCE
+            </div>
+
+            <div class="mini-photo corridor-photo">
+
+              <div class="corridor-light"></div>
+
+              <div class="door">
+                <span>204</span>
+              </div>
+
+              <div class="notice">
+                PROJECT<br>
+                ECHO<br>
+                <small>2019</small>
+              </div>
+
+            </div>
+
+            <div class="stamp">
+              RECONSTRUCTION
+            </div>
+
+          </div>
+
         </div>
+
       </section>
+
+
+
+      <!-- ================= DASHBOARD ================= -->
 
       <section id="dashboard" class="screen">
+
         <div class="dashboard-head">
+
           <div>
-            <p class="eyebrow">INVESTIGATION TERMINAL</p>
-            <h2>CASE #001 — THE LAST LOGIN</h2>
+
+            <p class="eyebrow">
+              INVESTIGATION TERMINAL
+            </p>
+
+            <h2>
+              CASE #001 — THE LAST LOGIN
+            </h2>
+
+            <p class="dashboard-sub">
+              Examine the evidence.
+              Find the connections.
+              Build the story.
+            </p>
+
           </div>
-          <div class="progress-box">CLUES FOUND <b id="clueCount">0</b>/6</div>
+
+
+          <!-- PROGRESS -->
+
+          <div class="progress-box">
+
+            <span>
+              CLUES FOUND
+            </span>
+
+            <b id="clueCount">
+              0
+            </b>
+
+            <small>
+              /6
+            </small>
+
+            <div class="progress-track">
+              <i id="progressBar"></i>
+            </div>
+
+          </div>
+
         </div>
+
+
+
+        <!-- EVIDENCE GRID -->
 
         <div class="grid">
-          <button class="evidence-card" onclick="openEvidence('screenshot')"><span>📸</span><b>Screenshots</b><small>3 files</small></button>
-          <button class="evidence-card" onclick="openEvidence('chat')"><span>💬</span><b>Chat Logs</b><small>2 conversations</small></button>
-          <button class="evidence-card" onclick="openEvidence('files')"><span>📁</span><b>Files</b><small>5 documents</small></button>
-          <button class="evidence-card" onclick="openEvidence('browser')"><span>🌐</span><b>Browser History</b><small>14 entries</small></button>
-          <button class="evidence-card" onclick="openEvidence('timeline')"><span>⏰</span><b>Timeline</b><small>Important events</small></button>
-          <button class="evidence-card" onclick="openEvidence('people')"><span>👥</span><b>Persons of Interest</b><small>4 profiles</small></button>
-          <button class="evidence-card special" onclick="openEvidence('board')"><span>🧩</span><b>Evidence Board</b><small>Review your clues</small></button>
-          <button class="evidence-card solve" onclick="showScreen('solve')"><span>🔎</span><b>Solve Case</b><small>Ready when you are</small></button>
+
+
+          <!-- SCREENSHOTS -->
+
+          <button
+            class="evidence-card"
+            onclick="openEvidence('screenshot')"
+          >
+
+            <div class="thumb thumb-screen">
+              <span>23:47</span>
+            </div>
+
+            <b>
+              Recovered Screenshots
+            </b>
+
+            <small>
+              3 image files • clock anomaly
+            </small>
+
+            <em>
+              OPEN EVIDENCE →
+            </em>
+
+          </button>
+
+
+
+          <!-- CHAT -->
+
+          <button
+            class="evidence-card"
+            onclick="openEvidence('chat')"
+          >
+
+            <div class="thumb thumb-chat">
+              <span>•••</span>
+            </div>
+
+            <b>
+              Chat Logs
+            </b>
+
+            <small>
+              2 conversations • final warning
+            </small>
+
+            <em>
+              OPEN EVIDENCE →
+            </em>
+
+          </button>
+
+
+
+          <!-- FILES -->
+
+          <button
+            class="evidence-card"
+            onclick="openEvidence('files')"
+          >
+
+            <div class="thumb thumb-file">
+              <span>TXT</span>
+            </div>
+
+            <b>
+              Recovered Files
+            </b>
+
+            <small>
+              5 documents • Project Echo
+            </small>
+
+            <em>
+              OPEN EVIDENCE →
+            </em>
+
+          </button>
+
+
+
+          <!-- BROWSER -->
+
+          <button
+            class="evidence-card"
+            onclick="openEvidence('browser')"
+          >
+
+            <div class="thumb thumb-browser">
+              <span>⌁</span>
+            </div>
+
+            <b>
+              Browser History
+            </b>
+
+            <small>
+              14 entries • last activity
+            </small>
+
+            <em>
+              OPEN EVIDENCE →
+            </em>
+
+          </button>
+
+
+
+          <!-- TIMELINE -->
+
+          <button
+            class="evidence-card"
+            onclick="openEvidence('timeline')"
+          >
+
+            <div class="thumb thumb-time">
+              <span>22:47</span>
+            </div>
+
+            <b>
+              Reconstructed Timeline
+            </b>
+
+            <small>
+              Important events • time correction
+            </small>
+
+            <em>
+              OPEN EVIDENCE →
+            </em>
+
+          </button>
+
+
+
+          <!-- PEOPLE -->
+
+          <button
+            class="evidence-card"
+            onclick="openEvidence('people')"
+          >
+
+            <div class="thumb thumb-people">
+              <span>4</span>
+            </div>
+
+            <b>
+              Persons of Interest
+            </b>
+
+            <small>
+              4 profiles • shared history
+            </small>
+
+            <em>
+              OPEN EVIDENCE →
+            </em>
+
+          </button>
+
+
+
+          <!-- BOARD -->
+
+          <button
+            class="evidence-card special"
+            onclick="openEvidence('board')"
+          >
+
+            <div class="thumb thumb-board">
+              <span>↗</span>
+            </div>
+
+            <b>
+              Evidence Board
+            </b>
+
+            <small>
+              Connect the clues you've found
+            </small>
+
+            <em>
+              REVIEW BOARD →
+            </em>
+
+          </button>
+
+
+
+          <!-- SOLVE -->
+
+          <button
+            class="evidence-card solve"
+            onclick="showScreen('solve')"
+          >
+
+            <div class="thumb thumb-solve">
+              <span>?</span>
+            </div>
+
+            <b>
+              Solve Case
+            </b>
+
+            <small>
+              Make your final reconstruction
+            </small>
+
+            <em>
+              MAKE ACCUSATION →
+            </em>
+
+          </button>
+
+
         </div>
-        <p class="hint">Tip: You can investigate in any order. Look for connections between evidence.</p>
+
+
+        <!-- TIP -->
+
+        <div class="investigator-tip">
+
+          <span>
+            ✦
+          </span>
+
+          <div>
+
+            <b>
+              INVESTIGATOR TIP
+            </b>
+
+            <br>
+
+            Don't hunt for one magic clue.
+            Look for two pieces of evidence
+            that agree with each other.
+
+          </div>
+
+        </div>
+
       </section>
+
+
+
+      <!-- ================= EVIDENCE WINDOW ================= -->
 
       <section id="evidence" class="screen">
+
         <div class="evidence-window">
+
           <div class="windowbar">
-            <button onclick="showScreen('dashboard')">← Dashboard</button>
-            <span id="evidenceTitle">Evidence</span>
-            <button onclick="showScreen('dashboard')">×</button>
+
+            <button onclick="showScreen('dashboard')">
+              ← DASHBOARD
+            </button>
+
+            <span id="evidenceTitle">
+              Evidence
+            </span>
+
+            <button onclick="showScreen('dashboard')">
+              ×
+            </button>
+
           </div>
-          <div id="evidenceContent" class="evidence-content"></div>
+
+
+          <div
+            id="evidenceContent"
+            class="evidence-content"
+          ></div>
+
         </div>
+
       </section>
+
+
+
+      <!-- ================= SOLVE ================= -->
 
       <section id="solve" class="screen">
+
         <div class="solve-box">
-          <p class="eyebrow">FINAL ACCUSATION</p>
-          <h2>What happened?</h2>
-          <p class="muted">Use the evidence you've collected. You can submit even if you haven't found every clue.</p>
 
-          <label>1. What was wrong with the timestamps?</label>
+          <div class="solve-icon">
+            ⌕
+          </div>
+
+          <p class="eyebrow">
+            FINAL ACCUSATION
+          </p>
+
+          <h2>
+            What happened?
+          </h2>
+
+          <p class="muted">
+            Use the evidence you've collected.
+            You can submit even if you haven't found every clue —
+            but a real investigator checks the board first.
+          </p>
+
+
+          <!-- QUESTION 1 -->
+
+          <label>
+            1. What was wrong with the timestamps?
+          </label>
+
           <select id="q1">
-            <option value="">Choose...</option>
-            <option value="random">They were randomly generated</option>
-            <option value="hour">They were exactly one hour ahead</option>
-            <option value="day">They were one day behind</option>
+
+            <option value="">
+              Choose...
+            </option>
+
+            <option value="random">
+              They were randomly generated
+            </option>
+
+            <option value="hour">
+              They were exactly one hour ahead
+            </option>
+
+            <option value="day">
+              They were one day behind
+            </option>
+
           </select>
 
-          <label>2. What did Nina discover?</label>
+
+
+          <!-- QUESTION 2 -->
+
+          <label>
+            2. What did Nina discover?
+          </label>
+
           <select id="q2">
-            <option value="">Choose...</option>
-            <option value="access">Someone accessed the old account</option>
-            <option value="laptop">Her laptop was broken</option>
-            <option value="alex">Alex deleted her files</option>
+
+            <option value="">
+              Choose...
+            </option>
+
+            <option value="access">
+              Someone accessed the old account
+            </option>
+
+            <option value="laptop">
+              Her laptop was broken
+            </option>
+
+            <option value="alex">
+              Alex deleted her files
+            </option>
+
           </select>
 
-          <label>3. When did the suspicious access actually happen?</label>
+
+
+          <!-- QUESTION 3 -->
+
+          <label>
+            3. When did the suspicious access actually happen?
+          </label>
+
           <select id="q3">
-            <option value="">Choose...</option>
-            <option value="2147">21:47</option>
-            <option value="2214">22:14</option>
-            <option value="2247">22:47</option>
+
+            <option value="">
+              Choose...
+            </option>
+
+            <option value="2147">
+              21:47
+            </option>
+
+            <option value="2214">
+              22:14
+            </option>
+
+            <option value="2247">
+              22:47
+            </option>
+
           </select>
 
-          <label>4. Which project connects the characters?</label>
+
+
+          <!-- QUESTION 4 -->
+
+          <label>
+            4. Which project connects the characters?
+          </label>
+
           <select id="q4">
-            <option value="">Choose...</option>
-            <option value="alpha">Project Alpha</option>
-            <option value="echo">Project Echo</option>
-            <option value="zero">Project Zero</option>
+
+            <option value="">
+              Choose...
+            </option>
+
+            <option value="alpha">
+              Project Alpha
+            </option>
+
+            <option value="echo">
+              Project Echo
+            </option>
+
+            <option value="zero">
+              Project Zero
+            </option>
+
           </select>
 
-          <label>5. Who used Daniel's old credentials?</label>
+
+
+          <!-- QUESTION 5 -->
+
+          <label>
+            5. Who used Daniel's old credentials?
+          </label>
+
           <select id="q5">
-            <option value="">Choose...</option>
-            <option value="alex">Alex Mathew</option>
-            <option value="maya">Maya Joseph</option>
-            <option value="nina">Nina Thomas</option>
-            <option value="daniel">Daniel Roy</option>
+
+            <option value="">
+              Choose...
+            </option>
+
+            <option value="alex">
+              Alex Mathew
+            </option>
+
+            <option value="maya">
+              Maya Joseph
+            </option>
+
+            <option value="nina">
+              Nina Thomas
+            </option>
+
+            <option value="daniel">
+              Daniel Roy
+            </option>
+
           </select>
 
-          <button class="primary" onclick="submitCase()">SUBMIT ACCUSATION</button>
-          <div id="result" class="result"></div>
+
+
+          <button
+            class="primary"
+            onclick="submitCase()"
+          >
+            SUBMIT ACCUSATION
+            <span>→</span>
+          </button>
+
+
+          <div
+            id="result"
+            class="result"
+          ></div>
+
         </div>
+
       </section>
+
+
+
+      <!-- ================= ENDING ================= -->
 
       <section id="ending" class="screen">
+
         <div class="ending-box">
-          <p class="eyebrow">CASE #001</p>
-          <h1>CASE SOLVED</h1>
-          <div class="reveal">
-            <p>Nina discovered that someone was accessing the old Project Echo account.</p>
-            <p>The displayed timestamps were shifted <strong>one hour ahead</strong>. The suspicious access shown at 23:47 actually happened at <strong>22:47</strong>, after Nina's laptop had been shut down.</p>
-            <p>The access was associated with an old Project Echo device/credential trail linked to <strong>Daniel Roy</strong>.</p>
-            <p>But Daniel wasn't the person operating it.</p>
-            <p><strong>Maya Joseph</strong> had used Daniel's old credentials to access the archive. Nina discovered what was happening.</p>
+
+          <div class="solved-mark">
+            ✓
           </div>
-          <div class="twist">BUT... WHO CHANGED THE TIMESTAMPS?</div>
-          <p class="next-case">CASE #002 — LOCKED 🔒</p>
-          <button class="secondary" onclick="showScreen('dashboard')">RETURN TO EVIDENCE</button>
+
+          <p class="eyebrow">
+            CASE #001 // FINAL RECONSTRUCTION
+          </p>
+
+          <h1>
+            CASE SOLVED
+          </h1>
+
+
+          <div class="reveal">
+
+
+            <div class="reveal-line">
+
+              <span>
+                01
+              </span>
+
+              <p>
+                Nina discovered that someone was accessing
+                the old Project Echo account.
+              </p>
+
+            </div>
+
+
+
+            <div class="reveal-line">
+
+              <span>
+                02
+              </span>
+
+              <p>
+                The displayed timestamps were shifted
+                <strong>one hour ahead</strong>.
+                The suspicious access shown at
+                <strong>23:47</strong>
+                actually happened at
+                <strong>22:47</strong>,
+                after Nina's laptop had been shut down.
+              </p>
+
+            </div>
+
+
+
+            <div class="reveal-line">
+
+              <span>
+                03
+              </span>
+
+              <p>
+                The access was associated with an old
+                Project Echo device/credential trail linked to
+                <strong>Daniel Roy</strong>.
+              </p>
+
+            </div>
+
+
+
+            <div class="reveal-line">
+
+              <span>
+                04
+              </span>
+
+              <p>
+                But Daniel wasn't the person operating it.
+              </p>
+
+            </div>
+
+
+
+            <div class="reveal-line">
+
+              <span>
+                05
+              </span>
+
+              <p>
+                <strong>Maya Joseph</strong>
+                had used Daniel's old credentials
+                to access the archive.
+                Nina discovered what was happening.
+              </p>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="twist">
+            BUT... WHO CHANGED THE TIMESTAMPS?
+          </div>
+
+
+          <p class="next-case">
+            CASE #002 — LOCKED 🔒
+          </p>
+
+
+          <button
+            class="secondary"
+            onclick="showScreen('dashboard')"
+          >
+            RETURN TO EVIDENCE
+          </button>
+
         </div>
+
       </section>
+
     </main>
 
-    <footer>FICTIONAL INVESTIGATION • FOR DEMONSTRATION ONLY</footer>
+
+    <footer>
+      FICTIONAL INVESTIGATION • FOR DEMONSTRATION ONLY • SYSTEM ONLINE
+    </footer>
+
   </div>
+
+
+  <!-- JAVASCRIPT -->
   <script src="script.js"></script>
+
 </body>
-</html>
+              </html>
